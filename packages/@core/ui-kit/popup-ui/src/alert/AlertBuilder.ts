@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance, VNode } from 'vue';
+import type { Component, ComponentPublicInstance, VNode } from 'vue';
 
 import type { Recordable } from '@vben-core/typings';
 
