@@ -1,4 +1,4 @@
-import type { Component, VNode } from 'vue';
+import type { ComponentPublicInstance, VNode } from 'vue';
 
 import type { Recordable } from '@vben-core/typings';
 
@@ -12,7 +12,7 @@ import { isFunction, isString } from '@vben-core/shared/utils';
 
 import Alert from './alert.vue';
 
-const alerts = ref<Array<{ container: HTMLElement; instance: Component }>>([]);
+const alerts = ref<Array<{ container: HTMLElement; instance: ComponentPublicInstance | null }>>([]);
 
 const { $t } = useSimpleLocale();
 
@@ -88,7 +88,7 @@ export function vbenAlert(
     render(vnode, container);
 
     // 保存组件实例引用
-    alertRef.instance = vnode.component?.proxy as Component;
+    alertRef.instance = vnode.component?.proxy ?? null;
 
     // 将实例和容器添加到alerts数组中
     alerts.value.push(alertRef);
