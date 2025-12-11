@@ -20,12 +20,14 @@
         "dist/**",
         "dist.zip",
         ".vitepress/dist.zip",
-        ".vitepress/dist/**"
+        ".vitepress/dist/**",
+        ".output/**",
+        ".nuxt/**"
       ]
     },
     "preview": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**", ".output/**"]
     },
     "build:analyze": {
       "dependsOn": ["^build"],
@@ -34,6 +36,10 @@
     "@vben/backend-mock#build": {
       "dependsOn": ["^build"],
       "outputs": [".nitro/**", ".output/**"]
+    },
+    "@vben/web-antd#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".output/**", ".nuxt/**"]
     },
     "test:e2e": {},
     "dev": {
