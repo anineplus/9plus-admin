@@ -15,7 +15,7 @@ import { useAccessStore } from '@vben/stores';
 
 import { message } from 'ant-design-vue';
 
-import { useAuthStore } from '#/store';
+import { useAuthStore } from '~/store';
 
 import { refreshTokenApi } from './core';
 
