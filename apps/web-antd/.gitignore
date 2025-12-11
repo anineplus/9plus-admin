@@ -1,0 +1,6 @@
+.nuxt
+.output
+node_modules
+vite.config.d.mts
+vite.config.mjs
+tsconfig.tsbuildinfo

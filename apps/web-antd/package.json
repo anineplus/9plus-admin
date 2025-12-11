@@ -16,16 +16,15 @@
   },
   "type": "module",
   "scripts": {
-    "build": "pnpm vite build --mode production",
-    "build:analyze": "pnpm vite build --mode analyze",
-    "dev": "pnpm vite --mode development",
-    "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck"
-  },
-  "imports": {
-    "#/*": "./src/*"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.9.0",
     "@vben/access": "workspace:*",
     "@vben/common-ui": "workspace:*",
     "@vben/constants": "workspace:*",
@@ -41,10 +40,15 @@
     "@vben/types": "workspace:*",
     "@vben/utils": "workspace:*",
     "@vueuse/core": "catalog:",
+    "@vueuse/nuxt": "^13.4.0",
     "ant-design-vue": "catalog:",
     "dayjs": "catalog:",
+    "nuxt": "^4.2.1",
     "pinia": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.13.2"
   }
 }
